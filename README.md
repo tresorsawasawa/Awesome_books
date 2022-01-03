@@ -22,8 +22,8 @@
 
 To get a local copy up and running follow these simple example steps.
 
-1. Clone the Repo or Download the Zip file or ``` https://github.com/tresorsawasawa/Solidarity-Capstone-project.git```.
-2. ``` cd /Solidarity-Capstone-project```
+1. Clone the Repo or Download the Zip file or ``` https://github.com/tresorsawasawa/Awesome_books.git ```.
+2. ``` cd /Awesome_books ```
 3. Open it with the live server
 
 ## Test
@@ -32,7 +32,7 @@ For tracking linter errors locally you need to follow these steps:
 
 After cloning the project you need to run these commands
 
-``` npm install ``` > This command will download all the dependancies of the project
+``` npm install ```  `` This command will download all the dependancies of the project ``
 
 For tracking linter errors in HTML files run:
 
@@ -48,10 +48,6 @@ And For tracking linter errors in JavaScript files run:
 ## Live Demo
 
 See the live by clicking [Live Demo Link]()
-
-## Video Desription
-
-Click [Here to watch the video](https://www.loom.com/share/ff77b28de94849ef80f783d7f6466c71)
 
 ## Authors
 
