@@ -17,16 +17,13 @@ inserBooktBtn.onclick = () => {
     };
     booklist.unshift(newBook);
     localStorage.setItem('Books', JSON.stringify(booklist));
-    // eslint-disable-next-line no-restricted-globals
     location.reload();
   }
 };
 
-// eslint-disable-next-line no-unused-vars
 function removeBook(val) {
   const book = booklist.filter((data, i) => i !== val);
   localStorage.setItem('Books', JSON.stringify(book));
-  // eslint-disable-next-line no-restricted-globals
   location.reload();
 }
 

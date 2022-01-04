@@ -11,6 +11,8 @@
   },
   "extends": ["airbnb-base"],
   "rules": {
+    "no-restricted-globals": ["error", "event", "fdescribe"],
+    "varsIgnorePattern": "[iI]gnored",
     "no-shadow": "off",
     "no-param-reassign": "off",
     "eol-last": "off",
