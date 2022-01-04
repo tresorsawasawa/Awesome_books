@@ -9,7 +9,7 @@ inserBooktBtn.onclick = () => {
   const title = inputTitle.value;
   const author = inputAuthor.value;
   if (title === '' || author === '') {
-    alert('Add any input');
+    alert('Inputs cannot be empty');
   } else {
     const newBook = {
       title,
