@@ -3,5 +3,25 @@
 }
 
 body {
-  margin: 0, auto;
+  margin: 0 auto;
+}
+
+.container {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form {
+  align-items: flex-start;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.addBook .item1 {
+  font-weight: 600;
 }
