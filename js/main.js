@@ -42,4 +42,3 @@ for (let i = 0; i < booklist.length; i += 1) {
                             <hr>
                           </div>`;
 }
-
