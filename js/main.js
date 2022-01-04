@@ -22,6 +22,14 @@ inserBooktBtn.onclick = () => {
   }
 };
 
+// eslint-disable-next-line no-unused-vars
+function removeBook(val) {
+  const book = booklist.filter((data, i) => i !== val);
+  localStorage.setItem('Books', JSON.stringify(book));
+  // eslint-disable-next-line no-restricted-globals
+  location.reload();
+}
+
 for (let i = 0; i < booklist.length; i += 1) {
   const book = booklist[i];
   listOutput.innerHTML += `<div id="addBook" class="addBook">
@@ -34,3 +42,4 @@ for (let i = 0; i < booklist.length; i += 1) {
                             <hr>
                           </div>`;
 }
+
