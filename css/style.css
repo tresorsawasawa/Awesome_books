@@ -10,12 +10,13 @@ body {
   width: 70%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
+  margin: 0 auto;
 }
 
 .form {
-  align-items: flex-start;
+  width: 100%;
 }
 
 .form-group {
@@ -24,4 +25,26 @@ body {
 
 .addBook .item1 {
   font-weight: 600;
+}
+
+#lsOutput {
+  width: 100%;
+}
+
+#addBook {
+  display: flex;
+  flex-direction: column;
+}
+
+.bttn {
+  width: 70px;
+}
+
+.book-list {
+  width: 100%;
+}
+
+hr {
+  background-color: black;
+  height: 2px;
 }

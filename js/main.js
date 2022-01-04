@@ -33,12 +33,10 @@ function removeBook(val) {
 for (let i = 0; i < booklist.length; i += 1) {
   const book = booklist[i];
   listOutput.innerHTML += `<div id="addBook" class="addBook">
-                             <div class="space-btn">
-                             <span">${'  '}</span>
-                             <span class="book-info item1">"${book.title}"</span></br>
-                             <span class="book-info item2">${book.author}</span></br>
-                             <input type="submit" value="Remove" id="delBtn" onclick="removeBook(${i})">
-                             </div>
-                            <hr>
+                              <span">${'  '}</span>
+                              <span class="book-info item1">"${book.title}"</span></br>
+                              <span class="book-info item2">${book.author}</span></br>
+                              <input type="submit" class="bttn" value="Remove" id="delBtn" onclick="removeBook(${i})">
+                              <hr>
                           </div>`;
 }
