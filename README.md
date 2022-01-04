@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# # Awesome books
+# Awesome Books
 
 ## Description
 
@@ -51,12 +51,17 @@ See the live by clicking [Live Demo Link]()
 
 ## Authors
 
-👤 **Author**
+👤 **Author 1**
 
 - GitHub: [@tresorsawasawa](https://github.com/tresorsawasawa)
 - Twitter: [@tresorsawasawa](https://twitter.com/TresorSawasawa)
-- LinkedIn: [Trésor Sawasawa](https://www.linkedin.com/in/tr%C3%A9sor-sawasawa-43745320b/)
+- LinkedIn: [Trésor Sawasawa](https://www.linkedin.com/in/ayandokunelijah/)
 
+👤 **Author 2**
+
+- GitHub: [@ElijahTobs](https://github.com/ElijahTobs)
+- Twitter: [@tresorsawasawa](https://twitter.com/ElijahTobs)
+- LinkedIn: [Elijah Ayandokun](https://www.linkedin.com/in/elijahayandokun/)
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
