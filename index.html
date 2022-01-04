@@ -4,10 +4,27 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
   <title>Awesome_Book</title>
 </head>
 <body>
-  <h1>Hello</h1>
+  <div class="container">
+    <h1 class="page-title">Awesome Book</h1>
+    <div class="book-list flex-center-column">
+      <h3>Book List</h3>
+      <div id="lsOutput"></div>
+    </div>
+    <form class="form flex-center-column">
+      <div class="form-group">
+        <input type="text" id ="title" class="input-text" placeholder="Title">
+      </div>
+      <div class="form-group">
+        <input type="text" id ="author" class="input-text" placeholder="Author">
+      </div>
+      <input type="submit" class="btn btn-primary text-white" value="Add Book" id="insertBtn">
+    </form>
+  </div>
   
+  <script src="js/main.js"></script>
 </body>
 </html>
