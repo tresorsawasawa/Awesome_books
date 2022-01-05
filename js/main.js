@@ -10,11 +10,13 @@ class Store {
     }
     return books;
   }
+
   static addBook(book) {
     const books = Store.getBooks();
     books.push(book);
     localStorage.setItem('Books', JSON.stringify(books));
   }
+
   static removeBook(id) {
     let books = Store.getBooks();
     const updatedBooks = books.filter((book) => book.id !== parseInt(id, 10));
@@ -46,9 +48,16 @@ class UI {
                             </div>
                             `;
   }
+
   static deleteBook(id) {
     const el = document.getElementById(`${id}`);
     el.parentNode.removeChild(el);
   }
 }
+
+listOutput.addEventListener('click', (e) => {
+  UI.deleteBook(e.target.parentElement.id);
+  Store.removeBook(e.target.parentElement.id);
+});
+
 UI.displayBook();
