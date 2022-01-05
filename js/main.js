@@ -41,11 +41,10 @@ class UI {
 
   static addBookToList(book) {
     listOutput.innerHTML += `<div class="book" id="${book.id}">
-                                <span class="item3 capitalize">${book.title}</span>
+                                <span class="item1 capitalize">"${book.title}"</span>
                                 <span class="small">by</span>
-                                <span class="item1 capitalize">"${book.author}"</span>
-                                
-                                  <button class="removeBtn" >Delete</button>
+                                <span class="item3 capitalize">${book.author}</span>
+                                <button class="removeBtn" >Delete</button>
                               </div>
                             `;
   }
@@ -63,7 +62,7 @@ document.addEventListener('submit', (e) => {
   } else {
     const author = e.target.author.value.trim();
     const title = e.target.title.value.trim();
-    const newBook = new Book(author, title);
+    const newBook = new Book(title, author);
     Store.addBook(newBook);
     UI.addBookToList(newBook);
     e.target.reset();

@@ -54,7 +54,6 @@ body {
 
 .list-output .book span {
   justify-self: normal;
-  border: solid green;
   padding: 5px 9px;
 }
 
@@ -70,15 +69,13 @@ div.list-output .book:nth-of-type(odd) {
   background-color: #ebe6e6;
 }
 
-.list-output .book .DelBtn {
+.list-output .book .removeBtn {
   position: absolute;
   align-self: flex-end;
   right: 0;
   bottom: 9px;
-}
-
-.list-output .book .DelBtn button {
   padding: 5px 18px;
+
 }
 
 #book {
@@ -124,4 +121,26 @@ div.list-output .book:nth-of-type(odd) {
 
 .main-container {
   border: solid red;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.form {
+  width: 100%;
+  border: 2px solid blue;
+}
+
+.form-group {
+  width: 50%;
+  border: yellow 4px solid;
+}
+
+.input-text {
+  width: 100%;
+  padding: 8px;
+}
+input.btn {
+  width: 25%;
+  padding: 5px;
+  margin-top: 10px;
 }
