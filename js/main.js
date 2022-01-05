@@ -1,5 +1,13 @@
 const listOutput = document.getElementById('lsOutput');
 
+class Book {
+  constructor(title, author) {
+    this.id = new Date().valueOf();
+    this.title = title;
+    this.author = author;
+  }
+}
+
 class Store {
   static getBooks() {
     let books;
@@ -13,7 +21,7 @@ class Store {
 
   static addBook(book) {
     const books = Store.getBooks();
-    books.push(book);
+    books.unshift(book);
     localStorage.setItem('Books', JSON.stringify(books));
   }
 
@@ -25,13 +33,6 @@ class Store {
   }
 }
 
-class Book {
-  constructor(title, author) {
-    this.id = new Date().valueOf();
-    this.title = title;
-    this.author = author;
-  }
-}
 class UI {
   static displayBook() {
     const bookList = Store.getBooks();
