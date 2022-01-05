@@ -13,6 +13,7 @@
   "rules": {
     "no-restricted-globals": ["error", "event", "fdescribe"],
     "no-shadow": "off",
+    "max-classes-per-file": "off",
     "no-param-reassign": "off",
     "no-unused-vars": "off",
     "eol-last": "off",
