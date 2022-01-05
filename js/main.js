@@ -21,7 +21,7 @@ class Store {
 
   static addBook(book) {
     const books = Store.getBooks();
-    books.unshift(book);
+    books.push(book);
     localStorage.setItem('Books', JSON.stringify(books));
   }
 
@@ -41,12 +41,13 @@ class UI {
 
   static addBookToList(book) {
     listOutput.innerHTML += `<div class="book" id="${book.id}">
-                             <div class="book-infos">
-                                <span>${book.title}</span>  <span>by</span>
-                                <span>${book.author}</span>
-                                <button class="removeBtn" >Delete</button>
+                                <span class="item1 capitalize">"${book.author}"</span>
+                                <span class="small">by</span>
+                                <span class="item3 capitalize">${book.title}</span>
+                                <div class="DelBtn">
+                                  <button class="removeBtn" >Delete</button>
+                                </div> 
                               </div>
-                            </div>
                             `;
   }
 
