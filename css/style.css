@@ -1,50 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 body {
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
 }
 
-.container {
-  width: 70%;
+.header {
+  text-align: center;
+}
+
+.flex-center-column {
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: flex-start;
   flex-direction: column;
+}
+
+.book-list {
+  margin-top: 20px;
+  width: 95%;
+}
+
+.book-list .list-title {
+  margin-top: 6px;
+  width: 90%;
+  border-radius: 5px;
+}
+
+#lsOutput {
+  border: 2px solid #000;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.list-output .book {
+  position: relative;
+  width: 97%;
+  margin: 3px auto;
+  border-radius: 3px;
+  display: flex;
+}
+
+.list-output .book span {
+  justify-self: normal;
+  padding: 5px 9px;
+}
+
+.list-output .book:first-child {
+  margin-top: 10px;
+}
+
+.list-output .book:last-child {
+  margin-bottom: 10px;
+}
+
+div.list-output .book:nth-of-type(odd) {
+  background-color: #ebe6e6;
+}
+
+.removeBtn {
+  align-self: flex-end;
+  padding: 3px 7px;
+  border: 1px solid #db2d05;
+  border-radius: 5px;
+  box-shadow: 3px 3px 0 0 #c9c5c5;
+  color: #db2d05;
+}
+
+.removeBtn:hover {
+  background-color: #db2d05;
+  color: #fff;
+}
+
+.list-output .book .removeBtn {
+  position: absolute;
+  align-self: flex-end;
+  right: 0;
+  bottom: 9px;
+  padding: 5px 18px;
+}
+
+#book {
+  display: flex;
+}
+
+.bookList-text {
+  display: flex;
+}
+
+.book .item1 {
+  font-weight: 600;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.list-title h3::after {
+  content: '';
+  height: 2px;
+  background-color: #000;
+  width: 50px;
+}
+
+.small {
+  font-size: 14px;
+}
+
+.main-container {
+  width: 90%;
   margin: 0 auto;
 }
 
 .form {
   width: 100%;
+  padding-top: 24px;
+}
+
+.form-title h3 {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.form-title h3::after {
+  content: '';
+  height: 2px;
+  background-color: #000;
+  width: 70%;
 }
 
 .form-group {
+  width: 50%;
+}
+
+.input-text {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+}
+
+.input-text:first-child {
   margin-bottom: 10px;
 }
 
-.addBook .item1 {
-  font-weight: 600;
+input.btn {
+  padding: 10px 15px;
+  margin-top: 10px;
+  color: #fff;
+  background-color: #157c15;
+  border: none;
+  border-radius: 5px;
 }
 
-#lsOutput {
-  width: 100%;
+input::placeholder {
+  font-size: 16px;
 }
 
-#addBook {
-  display: flex;
-  flex-direction: column;
-}
-
-.bttn {
-  width: 70px;
-}
-
-.book-list {
-  width: 100%;
-}
-
-hr {
-  background-color: black;
-  height: 2px;
+.clickable:hover {
+  cursor: pointer;
 }
