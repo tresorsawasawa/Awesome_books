@@ -37,3 +37,19 @@ for (let i = 0; i < booklist.length; i += 1) {
                               <hr>
                           </div>`;
 }
+
+class Store {}
+class Book {
+  constructor(title, author) {
+    this.id = new Date().valueOf();
+    this.title = title;
+    this.author = author;
+  }
+}
+class UI {
+  static displayBook() {
+    const bookList = Store.getBooks();
+    bookList.forEach((book) => UI.addBookToList(book));
+  }
+}
+UI.displayBook();
