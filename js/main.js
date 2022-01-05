@@ -52,32 +52,3 @@ class UI {
   }
 }
 UI.displayBook();
-
-//--------------------------------------------------------------- 
-class Book {
-  constructor(title, author) {
-    this.id = new Date().valueOf();
-    this.title = title;
-    this.author = author;
-  }
-}
-
-document.addEventListener('submit', (e) => {
-  e.preventDefault();
-  if (e.target.title.value === '' || e.target.author.value === '') {
-    alert('Fields not supposed to be empty!');
-  } else {
-    const author = e.target.author.value.trim();
-    const title = e.target.title.value.trim();
-    const newBook = new Book(author, title);
-    Store.addBook(newBook);
-    UI.addBookToList(newBook);
-    e.target.reset();
-  }
-});
-listOutput.addEventListener('click', (e) => {
-  UI.deleteBook(e.target.parentElement.id);
-  Store.removeBook(e.target.parentElement.id);
-});
-UI.displayBook();
-//---------------------------------------------------------------
