@@ -41,12 +41,11 @@ class UI {
 
   static addBookToList(book) {
     listOutput.innerHTML += `<div class="book" id="${book.id}">
-                                <span class="item1 capitalize">"${book.author}"</span>
-                                <span class="small">by</span>
                                 <span class="item3 capitalize">${book.title}</span>
-                                <div class="DelBtn">
+                                <span class="small">by</span>
+                                <span class="item1 capitalize">"${book.author}"</span>
+                                
                                   <button class="removeBtn" >Delete</button>
-                                </div> 
                               </div>
                             `;
   }
