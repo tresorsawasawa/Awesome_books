@@ -69,13 +69,26 @@ div.list-output .book:nth-of-type(odd) {
   background-color: #ebe6e6;
 }
 
+.removeBtn {
+  align-self: flex-end;
+  padding: 3px 7px;
+  border: 1px solid #db2d05;
+  border-radius: 5px;
+  box-shadow: 3px 3px 0 0 #c9c5c5;
+  color: #db2d05;
+}
+
+.removeBtn:hover {
+  background-color: #db2d05;
+  color: #fff;
+}
+
 .list-output .book .removeBtn {
   position: absolute;
   align-self: flex-end;
   right: 0;
   bottom: 9px;
   padding: 5px 18px;
-
 }
 
 #book {
@@ -105,42 +118,55 @@ div.list-output .book:nth-of-type(odd) {
   font-size: 14px;
 }
 
-.removeBtn {
-  align-self: flex-end;
-  padding: 3px 7px;
-  border: 1px solid #db2d05;
-  border-radius: 5px;
-  box-shadow: 3px 3px 0 0 #c9c5c5;
-  color: #db2d05;
-}
-
-.removeBtn:hover {
-  background-color: #db2d05;
-  color: #fff;
-}
-
 .main-container {
-  border: solid red;
-  width: 70%;
+  width: 90%;
   margin: 0 auto;
 }
 
 .form {
   width: 100%;
-  border: 2px solid blue;
+  padding-top: 24px;
+}
+
+.form-title h3 {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.form-title h3::after {
+  content: '';
+  height: 2px;
+  background-color: #000;
+  width: 70%;
 }
 
 .form-group {
   width: 50%;
-  border: yellow 4px solid;
 }
 
 .input-text {
   width: 100%;
   padding: 8px;
+  font-size: 16px;
 }
+
+.input-text:first-child {
+  margin-bottom: 10px;
+}
+
 input.btn {
-  width: 25%;
-  padding: 5px;
+  padding: 10px 15px;
   margin-top: 10px;
+  color: #fff;
+  background-color: #157c15;
+  border: none;
+  border-radius: 5px;
+}
+
+input::placeholder {
+  font-size: 16px;
+}
+
+.clickable:hover {
+  cursor: pointer;
 }
