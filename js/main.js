@@ -44,7 +44,7 @@ class UI {
                                 <span class="item1 capitalize">"${book.title}"</span>
                                 <span class="small">by</span>
                                 <span class="item3 capitalize">${book.author}</span>
-                                <button class="removeBtn" >Delete</button>
+                                <button class="removeBtn clickable" >Delete</button>
                               </div>
                             `;
   }
