@@ -8,22 +8,29 @@
   <title>Awesome_Book</title>
 </head>
 <body>
-  <div class="container">
-    <h1 class="page-title">Awesome Book</h1>
+  <header class="header">
+    <div class="page-title flex-center-column">
+      <h1 class="page-title">Awesome Book</h1>
+    </div>
+  </header>
+  <main class="main-container flex-center-column">
     <div class="book-list flex-center-column">
-      <h3>Book List</h3>
+      <div class="list-title">
+        <h3 class="flex-center-column">Book List</h3>
+      </div>
       <div id="lsOutput"></div>
     </div>
     <form class="form flex-center-column">
+      <h3>Add New Book</h3>
       <div class="form-group">
-        <input type="text" id ="title" class="input-text" placeholder="Title">
+        <input type="text" id ="title" class="input-text" placeholder="Enter Book Title">
       </div>
       <div class="form-group">
-        <input type="text" id ="author" class="input-text" placeholder="Author">
+        <input type="text" id ="author" class="input-text" placeholder="Enter Book Author">
       </div>
       <input type="submit" class="btn btn-primary text-white" value="Add Book" id="insertBtn">
     </form>
-  </div>
+  </main>
   
   <script src="js/main.js"></script>
 </body>
