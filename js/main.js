@@ -55,6 +55,13 @@ class UI {
   }
 }
 
+class Layout {
+  constructor() {
+    this.app = document.getElementById('app');
+    this.app.classList.add('layout');
+  }
+}
+
 document.addEventListener('submit', (e) => {
   e.preventDefault();
   if (e.target.title.value === '' || e.target.author.value === '') {
