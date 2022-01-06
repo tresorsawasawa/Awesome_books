@@ -59,8 +59,54 @@ class Layout {
   constructor() {
     this.app = document.getElementById('app');
     this.app.classList.add('layout');
+    this.header = document.createElement('header');
+    this.header.setAttribute('id', 'header');
+    this.header.classList.add('header');
+    this.header.innerHTML = `<nav class="navbar px-3">
+                               <div class="page-title">
+                                 <a data-target="#" class="page-title text-white">Awesome Book</a>
+                               </div>
+                               <ul class="nav-list d-flex mt-3">
+                                 <li class="nav-item " >
+                                   <a href="#" class="ps-3 text-white">List</a>
+                                 </li>
+                                 <li class="nav-item" >
+                                   <a href="#" class="ps-3 text-white">Add Book</a>
+                                 </li>
+                                 <li class="nav-item" >
+                                   <a href="#" class="ps-3 text-white">Contact</a>
+                                 </li>
+                               </ul>
+                             </nav>`;
+    this.main = document.createElement('main');
+    this.main.classList.add('main-container', 'flex');
+    this.bookList = document.createElement('div');
+    this.bookList.classList.add('book-list', 'flex-center-column',);
+    this.bookList.innerHTML = `<div class="list-title">
+                                <h3 class="fw-bold fs-4 pb-4 flex-center-column">Book List</h3>
+                                </div>
+                                <div id="lsOutput" class="lsOutput list-output w-100 rounded">
+                              </div>`;
+    this.NewBookForm = document.createElement('form');
+    this.NewBookForm.classList.add('form', 'flex-center-column', 'w-100', 'p-5');
+    this.NewBookForm.innerHTML = `<div class="form-title flex-center-column">
+                                    <h3 class="fw-bold fs-4 w-100 pb-4 flex-center-column">Add New Book</h3>
+                                  </div>
+                                  <div class="form-group w-50">
+                                    <input type="text" id ="title" class="form-control input-text w-100 shadow-none" placeholder="Enter Book Title">
+                                  </div>
+                                  <div class="form-group w-50">
+                                    <input type="text" id ="author" class="form-control input-text w-100 shadow-none" placeholder="Enter Book Author">
+                                  </div>
+                                  <input type="submit" class="btn btn-success px-5 clickable mt-4" value="Add Book" id="insertBtn">`;
+  
+    this.app.append(this.header, this.main, this.footer);
+    this.main.append(this.bookList, this.NewBookForm, this.contactInfos);
 
-    this.append();
+
+  }
+  update() {
+    UI.displayBook();
   }
 }
 
@@ -83,4 +129,9 @@ listOutput.addEventListener('click', (e) => {
   Store.removeBook(e.target.parentElement.id);
 });
 
-UI.displayBook();
+const layout = new Layout();
+layout.update()
+
+// -----------------------------------------------------
+
+// -----------------------------------------------------
