@@ -1,5 +1,3 @@
-const listOutput = document.getElementById('lsOutput');
-
 class Book {
   constructor(title, author) {
     this.id = new Date().valueOf();
@@ -40,11 +38,12 @@ class UI {
   }
 
   static addBookToList(book) {
-    listOutput.innerHTML += `<div class="book" id="${book.id}">
-                                <span class="item1 capitalize">"${book.title}"</span>
-                                <span class="small">by</span>
-                                <span class="item3 capitalize">${book.author}</span>
-                                <button class="removeBtn clickable" >Delete</button>
+    const listOutput = document.querySelector('.lsOutput');
+    listOutput.innerHTML += `<div class="book rounded" id="${book.id}">
+                                <span class="p-2 fw-bolder item1 text-capitalize">"${book.title}"</span>
+                                <span class="p-2">by</span>
+                                <span class="p-2 item3 text-capitalize">${book.author}</span>
+                                <button class="position-absolute h5 py-1 px-4 removeBtn clickable rounded end-0 bottom-0" >Delete</button>
                               </div>
                             `;
   }
@@ -158,7 +157,7 @@ document.addEventListener('submit', (e) => {
 const layout = new Layout();
 layout.update();
 
-listOutput.addEventListener('click', (e) => {
+document.querySelector('.lsOutput').addEventListener('click', (e) => {
   UI.deleteBook(e.target.parentElement.id);
   Store.removeBook(e.target.parentElement.id);
 });
