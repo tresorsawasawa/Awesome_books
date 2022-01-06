@@ -59,6 +59,26 @@ class Layout {
   constructor() {
     this.app = document.getElementById('app');
     this.app.classList.add('layout');
+
+    this.header = document.createElement('header');
+    this.header.setAttribute('id', 'header');
+    this.header.classList.add('header');
+    this.header.innerHTML = `<nav class="navbar px-3">
+                               <div class="page-title">
+                                 <a data-target="#" class="page-title text-white">Awesome Book</a>
+                               </div>
+                               <ul class="nav-list d-flex mt-3">
+                                 <li class="nav-item " >
+                                   <a href="#" class="ps-3 text-white">List</a>
+                                 </li>
+                                 <li class="nav-item" >
+                                   <a href="#" class="ps-3 text-white">Add Book</a>
+                                 </li>
+                                 <li class="nav-item" >
+                                   <a href="#" class="ps-3 text-white">Contact</a>
+                                 </li>
+                               </ul>
+                             </nav>`;
   }
 }
 
