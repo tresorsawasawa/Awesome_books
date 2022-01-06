@@ -59,8 +59,30 @@ class Layout {
   constructor() {
     this.app = document.getElementById('app');
     this.app.classList.add('layout');
-
-    this.append();
+    this.header = document.createElement('header');
+    this.header.setAttribute('id', 'header');
+    this.header.classList.add('header');
+    this.header.innerHTML = `<nav class="navbar px-3">
+                               <div class="page-title">
+                                 <a data-target="#" class="page-title text-white">Awesome Book</a>
+                               </div>
+                               <ul class="nav-list d-flex mt-3">
+                                 <li class="nav-item " >
+                                   <a href="#" class="ps-3 text-white">List</a>
+                                 </li>
+                                 <li class="nav-item" >
+                                   <a href="#" class="ps-3 text-white">Add Book</a>
+                                 </li>
+                                 <li class="nav-item" >
+                                   <a href="#" class="ps-3 text-white">Contact</a>
+                                 </li>
+                               </ul>
+                             </nav>`;
+    this.app.append(this.header, this.main, this.footer);
+    this.main.append(this.bookList, this.NewBookForm, this.contactInfos);
+  }
+  update() {
+    UI.displayBook();
   }
 }
 
@@ -83,4 +105,9 @@ listOutput.addEventListener('click', (e) => {
   Store.removeBook(e.target.parentElement.id);
 });
 
-UI.displayBook();
+const layout = new Layout();
+layout.update()
+
+// -----------------------------------------------------
+
+// -----------------------------------------------------
