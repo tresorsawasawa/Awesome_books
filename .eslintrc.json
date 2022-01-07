@@ -12,7 +12,6 @@
   "extends": ["airbnb-base"],
   "rules": {
     "no-restricted-globals": ["error", "event", "fdescribe"],
-    "enforceForClassFields": false,
     "no-shadow": "off",
     "max-classes-per-file": "off",
     "no-param-reassign": "off",

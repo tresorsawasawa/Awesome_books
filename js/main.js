@@ -1,3 +1,4 @@
+/* eslint class-methods-use-this: ["error", { "exceptMethods": ["Layout", "update"] }] */
 class Book {
   constructor(title, author) {
     this.id = new Date().valueOf();
@@ -73,7 +74,7 @@ class Navigation {
   }
 
   changeContent(e) {
-    document.querySelectorAll('.content-box').forEach((item) => {
+    this.document.querySelectorAll('.content-box').forEach((item) => {
       item.classList.remove('active');
     });
     const selector = e.target.getAttribute('href');
@@ -194,6 +195,15 @@ class Layout {
     nav.init();
   }
 }
+
+function addedSuccess() {
+  document.getElementById('addMsg').style = 'display:block';
+  document.getElementById('addMsg').innerHTML = 'Book added successfully!!!';
+  setTimeout(() => {
+    document.getElementById('addMsg').style = 'display:none';
+  }, 3000);
+}
+
 document.addEventListener('submit', (e) => {
   e.preventDefault();
   if (e.target.title.value === '' || e.target.author.value === '') {
@@ -210,13 +220,6 @@ document.addEventListener('submit', (e) => {
     });
     const content = document.querySelector('#form');
     content.classList.add('active');
-    function addedSuccess() {
-      document.getElementById('addMsg').style = 'display:block';
-      document.getElementById('addMsg').innerHTML = 'Book added successfully!!!';
-      setTimeout(() => {
-        document.getElementById('addMsg').style = 'display:none';
-      }, 3000);
-    }
     addedSuccess();
   }
 });
