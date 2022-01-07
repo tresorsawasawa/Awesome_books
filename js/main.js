@@ -1,4 +1,7 @@
 /* eslint class-methods-use-this: ["error", { "exceptMethods": ["changeContent", "update"] }] */
+
+const date = window.luxon;
+
 class Book {
   constructor(title, author) {
     this.id = new Date().valueOf();
@@ -108,11 +111,12 @@ class Layout {
                                  </li>
                                </ul>
                              </nav>`;
-    const today = new Date();
+
+    const today = date.DateTime.local();
     this.time = document.createElement('div');
-    this.time.classList.add('clock', 'pt-5');
-    this.time.innerHTML = `<p class='pt-4 text-end'>
-                             ${today}
+    this.time.classList.add('clock', 'mt-5');
+    this.time.innerHTML = `<p class='pt-4 text-end me-2'>
+                             ${today.toFormat('FFF')}
                            </p>
                            `;
     this.main = document.createElement('main');
