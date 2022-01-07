@@ -15,11 +15,13 @@ class Store {
     }
     return books;
   }
+
   static addBook(book) {
     const books = Store.getBooks();
     books.push(book);
     localStorage.setItem('Books', JSON.stringify(books));
   }
+
   static removeBook(id) {
     let books = Store.getBooks();
     const updatedBooks = books.filter((book) => book.id !== parseInt(id, 10));
@@ -30,10 +32,11 @@ class Store {
 class UI {
   static displayBook() {
     const bookList = Store.getBooks();
-      bookList.forEach((book) => UI.addBookToList(book));
+    bookList.forEach((book) => UI.addBookToList(book));
   }
+
   static addBookToList(book) {
-    const listOutput = document.querySelector('.lsOutput')
+    const listOutput = document.querySelector('.lsOutput');
     listOutput.innerHTML += `<div class="book rounded" id="${book.id}">
                                 <span class="p-2 fw-bolder item1 text-capitalize">"${book.title}"</span>
                                 <span class="p-2">by</span>
@@ -42,6 +45,7 @@ class UI {
                               </div>
                             `;
   }
+
   static deleteBook(id) {
     const el = document.getElementById(`${id}`);
     el.parentNode.removeChild(el);
@@ -51,6 +55,7 @@ class Navigation {
   constructor() {
     this.navs = document.querySelectorAll('[href]');
   }
+
   init() {
     this.navs.forEach((nav) => {
       nav.addEventListener('click', (e) => {
@@ -61,10 +66,12 @@ class Navigation {
       });
     });
   }
+
   changeTabs(e) {
     this.navs.forEach((nav) => nav.classList.remove('active'));
     e.target.classList.add('active');
   }
+
   changeContent(e) {
     document.querySelectorAll('.content-box').forEach((item) => {
       item.classList.remove('active');
@@ -128,8 +135,8 @@ class Layout {
       'content',
       'form',
       'content-box',
-      'w-100'
-      );
+      'w-100',
+    );
     this.NewBookForm.innerHTML = `<div class="form-title flex-center-column pt-3">
                                     <h3 class="fw-bold fs-4 w-100 pt-2 pb-2 flex-center-column">Add New Book</h3>
                                   </div>
@@ -150,7 +157,7 @@ class Layout {
       'text-center',
       'content-box',
       'content',
-      'pt-5'
+      'pt-5',
     );
     this.contactInfos.setAttribute('id', 'contact');
     this.contactInfos.classList.add('contact');
@@ -172,14 +179,15 @@ class Layout {
       'footer',
       'position-fixed',
       'bottom-0',
-      'w-100'
-      );
+      'w-100',
+    );
     this.footer.innerHTML = `<div class="copyright py-3 text-end me-3">
                                <p class="h6 text-white">&copy;2022, <span class="h6">AwesomeBooks</span> </p>
                              </div>`;
     this.app.append(this.header, this.time, this.main, this.footer);
     this.main.append(this.bookList, this.NewBookForm, this.contactInfos);
   }
+
   update() {
     UI.displayBook();
     const nav = new Navigation();
@@ -203,13 +211,13 @@ document.addEventListener('submit', (e) => {
     const content = document.querySelector('#form');
     content.classList.add('active');
     function addedSuccess() {
-      document.getElementById("addMsg").style = "display:block";
-      document.getElementById("addMsg").innerHTML = "Book added successfully!!!";
-      setTimeout(function() {
-        document.getElementById("addMsg").style = "display:none";
+      document.getElementById('addMsg').style = 'display:block';
+      document.getElementById('addMsg').innerHTML = 'Book added successfully!!!';
+      setTimeout(() => {
+        document.getElementById('addMsg').style = 'display:none';
       }, 3000);
-   }
-   addedSuccess();
+    }
+    addedSuccess();
   }
 });
 const layout = new Layout();
