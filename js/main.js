@@ -5,7 +5,6 @@ class Book {
     this.author = author;
   }
 }
-
 class Store {
   static getBooks() {
     let books;
@@ -16,13 +15,11 @@ class Store {
     }
     return books;
   }
-
   static addBook(book) {
     const books = Store.getBooks();
     books.push(book);
     localStorage.setItem('Books', JSON.stringify(books));
   }
-
   static removeBook(id) {
     let books = Store.getBooks();
     const updatedBooks = books.filter((book) => book.id !== parseInt(id, 10));
@@ -30,15 +27,13 @@ class Store {
     localStorage.setItem('Books', JSON.stringify(books));
   }
 }
-
 class UI {
   static displayBook() {
     const bookList = Store.getBooks();
-    bookList.forEach((book) => UI.addBookToList(book));
+      bookList.forEach((book) => UI.addBookToList(book));
   }
-
   static addBookToList(book) {
-    const listOutput = document.querySelector('.lsOutput');
+    const listOutput = document.querySelector('.lsOutput')
     listOutput.innerHTML += `<div class="book rounded" id="${book.id}">
                                 <span class="p-2 fw-bolder item1 text-capitalize">"${book.title}"</span>
                                 <span class="p-2">by</span>
@@ -47,13 +42,11 @@ class UI {
                               </div>
                             `;
   }
-
   static deleteBook(id) {
     const el = document.getElementById(`${id}`);
     el.parentNode.removeChild(el);
   }
 }
-
 class Navigation {
   constructor() {
     this.navs = document.querySelectorAll('[href]');
@@ -81,95 +74,118 @@ class Navigation {
     content.classList.add('active');
   }
 }
-
 class Layout {
   constructor() {
     this.app = document.getElementById('app');
     this.app.classList.add('layout');
-
     this.header = document.createElement('header');
     this.header.setAttribute('id', 'header');
-    this.header.classList.add('header');
+    this.header.classList.add('header', 'position-fixed', 'top-0', 'w-100');
     this.header.innerHTML = `<nav class="navbar px-3">
                                <div class="page-title">
-                                 <a data-target="#" class="page-title text-white">Awesome Book</a>
+                                 <a href="#list" class="page-title text-white active">Awesome Book</a>
                                </div>
                                <ul class="nav-list d-flex mt-3">
+                                 <li id="position-relative" >
+                                   <span class="active-navlink"></span>
+                                 </li>
                                  <li class="nav-item " >
-                                   <a href="#" class="ps-3 text-white">List</a>
+                                   <a href="#list" class="ps-3 text-white navLink active">List</a>
                                  </li>
                                  <li class="nav-item" >
-                                   <a href="#" class="ps-3 text-white">Add Book</a>
+                                   <a href="#form" class="ps-3 text-white navLink">Add Book</a>
                                  </li>
                                  <li class="nav-item" >
-                                   <a href="#" class="ps-3 text-white">Contact</a>
+                                   <a href="#contact" class="ps-3 text-white navLink">Contact</a>
                                  </li>
                                </ul>
                              </nav>`;
-
+    const today = new Date();
+    this.time = document.createElement('div');
+    this.time.classList.add('clock', 'pt-5');
+    this.time.innerHTML = `<p class='pt-4 text-end'>
+                             ${today}
+                           </p>
+                           `;
     this.main = document.createElement('main');
-    this.main.classList.add('main-container', 'flex');
-
+    this.main.classList.add('main-container');
     this.bookList = document.createElement('div');
-    this.bookList.classList.add('book-list', 'flex-center-column');
+    this.bookList.id = 'list';
+    this.bookList.classList.add(
+      'content',
+      'book-list',
+      'active',
+      'content-box',
+      'pt-2',
+    );
     this.bookList.innerHTML = `<div class="list-title">
                                   <h3 class="fw-bold fs-4 pb-4 flex-center-column">Book List</h3>
                                 </div>
                                 <div id="lsOutput" class="lsOutput list-output w-100 rounded"></div>`;
-
     this.NewBookForm = document.createElement('form');
-    this.NewBookForm.classList.add('form', 'flex-center-column', 'w-100', 'p-5');
-    this.NewBookForm.innerHTML = `<div class="form-title flex-center-column">
-                                    <h3 class="fw-bold fs-4 w-100 pb-4 flex-center-column">Add New Book</h3>
+    this.NewBookForm.id = 'form';
+    this.NewBookForm.classList.add(
+      'content',
+      'form',
+      'content-box',
+      'w-100'
+      );
+    this.NewBookForm.innerHTML = `<div class="form-title flex-center-column pt-3">
+                                    <h3 class="fw-bold fs-4 w-100 pt-2 pb-2 flex-center-column">Add New Book</h3>
                                   </div>
+                                  <p id="addMsg" class="text-center text-success"></p>
                                   <div class="form-group w-50">
                                     <input type="text" id ="title" class="form-control input-text w-100 shadow-none" placeholder="Enter Book Title">
                                   </div>
                                   <div class="form-group w-50">
                                     <input type="text" id ="author" class="form-control input-text w-100 shadow-none" placeholder="Enter Book Author">
                                   </div>
-                                  <input type="submit" class="btn btn-success px-5 clickable mt-4" value="Add Book" id="insertBtn">`;
-
+                                  <div class="delete-btn text-center">
+                                    <input type="submit" class="btn btn-success px-5 clickable mt-4" value="Add Book" id="insertBtn">
+                                  </div>
+                                  `;
     this.contactInfos = document.createElement('div');
-    this.contactInfos.classList.add('contanctContainer', 'w-100', 'flex-center-column');
+    this.contactInfos.classList.add(
+      'w-100',
+      'text-center',
+      'content-box',
+      'content',
+      'pt-5'
+    );
     this.contactInfos.setAttribute('id', 'contact');
-    this.contactInfos.innerHTML = `<div class="contactBox w-75 p-4">
-                                     <div class="p-4 w-100 contact-title flex-center-column">
+    this.contactInfos.classList.add('contact');
+    this.contactInfos.innerHTML = `<div class="flex-center-column contactBox w-75 p-1">
+                                     <div class="pb-2 w-100 contact-title flex-center-column">
                                        <h3 class="fw-bold fs-4 w-100 flex-center-column position-relative">Contact Informarions</h3>
                                      </div>
                                      <p>Do you have any question or you just want to say <span class="fw-bolder">'Hello!'</span><p/>
-                                     <p class="py">You can reach out to us!</p>
-                                     <ul class="list-group pt-3">
-                                       <li class="list-group-item">Our e-mail: mail@gmail.com</li>
-                                       <li class="list-group-item">Our Phone number: 0043729136280 </li>
-                                       <li class="list-group-item">Our address: streetname 22, 84503 city, country</li>
+                                     <p>You can reach out to us!</p>
+                                     <ul class="list-group pt-2 text-start contact-list-container">
+                                       <li class="list-group-item">Our e-mail:<span class="fw-bold"> mail@gmail.com </span></li>
+                                       <li class="list-group-item">Our Phone number:<span class="fw-bold"> 0043729136280 </span></li>
+                                       <li class="list-group-item">Our address:<span class="fw-bold"> streetname 22, 84503 city, country</span></li>
                                      </ul>
                                    </div>`;
-
     this.footer = document.createElement('footer');
-    this.footer.setAttribute(
-      'id',
+    this.footer.setAttribute('id', 'footer');
+    this.footer.classList.add(
       'footer',
       'position-fixed',
       'bottom-0',
-      'w-100',
-    );
-    this.footer.classList.add('footer');
+      'w-100'
+      );
     this.footer.innerHTML = `<div class="copyright py-3 text-end me-3">
                                <p class="h6 text-white">&copy;2022, <span class="h6">AwesomeBooks</span> </p>
                              </div>`;
-
-    this.app.append(this.header, this.main, this.footer);
+    this.app.append(this.header, this.time, this.main, this.footer);
     this.main.append(this.bookList, this.NewBookForm, this.contactInfos);
   }
-
   update() {
     UI.displayBook();
     const nav = new Navigation();
     nav.init();
   }
 }
-
 document.addEventListener('submit', (e) => {
   e.preventDefault();
   if (e.target.title.value === '' || e.target.author.value === '') {
@@ -181,13 +197,28 @@ document.addEventListener('submit', (e) => {
     Store.addBook(newBook);
     UI.addBookToList(newBook);
     e.target.reset();
+    document.querySelectorAll('.content').forEach((item) => {
+      item.classList.remove('active');
+    });
+    const content = document.querySelector('#form');
+    content.classList.add('active');
+    function addedSuccess() {
+      document.getElementById("addMsg").style = "display:block";
+      document.getElementById("addMsg").innerHTML = "Book added successfully!!!";
+      setTimeout(function() {
+        document.getElementById("addMsg").style = "display:none";
+      }, 3000);
+   }
+   addedSuccess();
   }
 });
-
 const layout = new Layout();
 layout.update();
-
 document.querySelector('.lsOutput').addEventListener('click', (e) => {
+  const isButton = e.target.nodeName === 'BUTTON';
+  if (!isButton) {
+    return;
+  }
   UI.deleteBook(e.target.parentElement.id);
   Store.removeBook(e.target.parentElement.id);
 });
