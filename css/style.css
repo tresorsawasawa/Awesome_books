@@ -8,13 +8,28 @@
 }
 
 body {
-  /* margin: 0 auto; */
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
+  color: #212529;
 }
 
+a { text-decoration: none !important; }
+
+.footer,
 .header {
-  text-align: center;
+  background-color: #212529;
+}
+
+.emptyList {
+  background-color: red;
+  height: 30px;
+  padding: 30px;
+}
+
+.page-title a,
+.nav-list .nav-item {
+  font-weight: 800;
+  font-size: 18px;
 }
 
 .flex-center-column {
@@ -25,7 +40,7 @@ body {
 }
 
 .book-list {
-  margin-top: 20px;
+  margin: 20px auto 0;
   width: 95%;
 }
 
@@ -35,45 +50,25 @@ body {
   border-radius: 5px;
 }
 
-#lsOutput {
-  border: 2px solid #000;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  margin-top: 10px;
-  width: 100%;
-}
+#lsOutput { border: 2px solid #212529; }
 
 .list-output .book {
   position: relative;
   width: 97%;
   margin: 3px auto;
-  border-radius: 3px;
   display: flex;
 }
 
-.list-output .book span {
-  justify-self: normal;
-  padding: 5px 9px;
-}
+.list-output .book:first-child { margin-top: 10px; }
 
-.list-output .book:first-child {
-  margin-top: 10px;
-}
-
-.list-output .book:last-child {
-  margin-bottom: 10px;
-}
+.list-output .book:last-child { margin-bottom: 10px; }
 
 div.list-output .book:nth-of-type(odd) {
   background-color: #ebe6e6;
 }
 
 .removeBtn {
-  align-self: flex-end;
-  padding: 3px 7px;
   border: 1px solid #db2d05;
-  border-radius: 5px;
   box-shadow: 3px 3px 0 0 #c9c5c5;
   color: #db2d05;
 }
@@ -83,39 +78,12 @@ div.list-output .book:nth-of-type(odd) {
   color: #fff;
 }
 
-.list-output .book .removeBtn {
-  position: absolute;
-  align-self: flex-end;
-  right: 0;
-  bottom: 9px;
-  padding: 5px 18px;
-}
-
-#book {
-  display: flex;
-}
-
-.bookList-text {
-  display: flex;
-}
-
-.book .item1 {
-  font-weight: 600;
-}
-
-.capitalize {
-  text-transform: capitalize;
-}
-
 .list-title h3::after {
+  margin-top: 10px;
   content: '';
   height: 2px;
-  background-color: #000;
-  width: 50px;
-}
-
-.small {
-  font-size: 14px;
+  background-color: #212529;
+  width: 70px;
 }
 
 .main-container {
@@ -123,44 +91,21 @@ div.list-output .book:nth-of-type(odd) {
   margin: 0 auto;
 }
 
-.form {
-  width: 100%;
-  padding-top: 24px;
-}
-
-.form-title h3 {
-  width: 100%;
-  margin-bottom: 20px;
-}
-
+.contact-title h3::after,
 .form-title h3::after {
   content: '';
+  margin-top: 10px;
   height: 2px;
-  background-color: #000;
+  background-color: #212529;
   width: 70%;
 }
 
-.form-group {
-  width: 50%;
-}
-
-.input-text {
-  width: 100%;
-  padding: 8px;
-  font-size: 16px;
+.contact-title h3::after {
+  width: 150px;
 }
 
 .input-text:first-child {
   margin-bottom: 10px;
-}
-
-input.btn {
-  padding: 10px 15px;
-  margin-top: 10px;
-  color: #fff;
-  background-color: #157c15;
-  border: none;
-  border-radius: 5px;
 }
 
 input::placeholder {

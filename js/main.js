@@ -54,6 +54,23 @@ class UI {
   }
 }
 
+class Navigation {
+  constructor() {
+    this.navs = document.querySelectorAll('[href]');
+  }
+
+  init() {
+    this.navs.forEach((nav) => {
+      nav.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') {
+          this.changeTabs(e);
+          this.changeContent(e);
+        }
+      });
+    });
+  }
+}
+
 class Layout {
   constructor() {
     this.app = document.getElementById('app');
@@ -137,6 +154,8 @@ class Layout {
 
   update() {
     UI.displayBook();
+    const nav = new Navigation();
+    nav.init();
   }
 }
 
