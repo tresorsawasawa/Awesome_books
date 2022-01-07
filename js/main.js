@@ -1,4 +1,4 @@
-/* eslint class-methods-use-this: ["error", { "exceptMethods": ["Layout", "update"] }] */
+/* eslint class-methods-use-this: ["error", { "exceptMethods": ["changeContent", "update"] }] */
 class Book {
   constructor(title, author) {
     this.id = new Date().valueOf();
@@ -74,7 +74,7 @@ class Navigation {
   }
 
   changeContent(e) {
-    this.document.querySelectorAll('.content-box').forEach((item) => {
+    document.querySelectorAll('.content-box').forEach((item) => {
       item.classList.remove('active');
     });
     const selector = e.target.getAttribute('href');
