@@ -1,83 +1,69 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   list-style: none;
 }
-
 body {
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
   color: #212529;
+  height: 100%;
+  width: 100%;
+  position: relative;
 }
-
 a { text-decoration: none !important; }
-
-.footer,
 .header {
-  background-color: #212529;
+  z-index: 9;
 }
-
-.emptyList {
-  background-color: red;
-  height: 30px;
-  padding: 30px;
+.footer,
+.header { background-color: #212529; }
+.content { display: none; }
+.form-group {  margin: 30px auto;}
+.content.active {  display: block; }
+.nav-item a {
+  background-color: solid blue;
 }
-
 .page-title a,
 .nav-list .nav-item {
   font-weight: 800;
   font-size: 18px;
 }
-
 .flex-center-column {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
-
 .book-list {
-  margin: 20px auto 0;
+  margin: 20px auto 100px;
   width: 95%;
 }
-
 .book-list .list-title {
   margin-top: 6px;
   width: 90%;
   border-radius: 5px;
 }
-
 #lsOutput { border: 2px solid #212529; }
-
 .list-output .book {
   position: relative;
   width: 97%;
   margin: 3px auto;
   display: flex;
 }
-
 .list-output .book:first-child { margin-top: 10px; }
-
 .list-output .book:last-child { margin-bottom: 10px; }
-
-div.list-output .book:nth-of-type(odd) {
-  background-color: #ebe6e6;
-}
-
+div.list-output .book:nth-of-type(odd) { background-color: #EBE6E6; }
 .removeBtn {
-  border: 1px solid #db2d05;
-  box-shadow: 3px 3px 0 0 #c9c5c5;
-  color: #db2d05;
+  border: 1px solid #DB2D05;
+  box-shadow: 3px 3px 0 0 #C9C5C5;
+  color: #DB2D05;
 }
-
 .removeBtn:hover {
-  background-color: #db2d05;
+  background-color: #DB2D05;
   color: #fff;
 }
-
 .list-title h3::after {
   margin-top: 10px;
   content: '';
@@ -85,33 +71,22 @@ div.list-output .book:nth-of-type(odd) {
   background-color: #212529;
   width: 70px;
 }
-
 .main-container {
   width: 90%;
   margin: 0 auto;
 }
-
+.contactBox {
+  margin: 30px auto;
+}
 .contact-title h3::after,
 .form-title h3::after {
   content: '';
   margin-top: 10px;
   height: 2px;
   background-color: #212529;
-  width: 70%;
+  width: 120px;
 }
-
-.contact-title h3::after {
-  width: 150px;
-}
-
-.input-text:first-child {
-  margin-bottom: 10px;
-}
-
-input::placeholder {
-  font-size: 16px;
-}
-
-.clickable:hover {
-  cursor: pointer;
-}
+.contact-title h3::after { width: 150px; }
+.input-text:first-child { margin-bottom: 10px; }
+input::placeholder { font-size: 16px; }
+.clickable:hover {  cursor: pointer; }
