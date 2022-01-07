@@ -29,6 +29,7 @@
     "stylelint-scss": "^3.21.0"
   },
   "dependencies": {
+    "full-icu": "^1.4.0",
     "luxon": "^2.3.0"
   }
 }
