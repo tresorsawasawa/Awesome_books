@@ -2,6 +2,19 @@
 
 const date = window.luxon;
 
+// const humburger = document.getElementById('humburger');
+// const closeMemu = document.querySelector('#closeIcon');
+
+// closeMemu.addEventListener('click', () => {
+//   menu.classList.remove('change-menu');
+// });
+
+// window.addEventListener('mouseup', (e) => {
+//   if (e.target !== humburger && e.target !== closeMemu) {
+//     menu.classList.remove('change-menu');
+//   }
+// });
+
 class Book {
   constructor(title, author) {
     this.id = new Date().valueOf();
@@ -94,22 +107,22 @@ class Layout {
     this.header.classList.add('header', 'position-fixed', 'top-0', 'w-100');
     this.header.innerHTML = `<nav class="navbar px-3">
                                <div class="page-title">
-                                 <a href="#list" class="page-title text-white active">Awesome Book</a>
+                                 <a href="#list" class="page-title text-white active">Awesome Books</a>
                                </div>
-                               <span id="humburger"><i class="fa humburger fa-bars fa-2x humb-mob text-white d-none"></i></span>
-                               <span id="humburger"><i class="fa humburger fa-times fa-2x humb-mob text-white d-none"></i></span>
+                               <span id="humburger"><i class="fa clickable humburger fa-bars fa-2x humb-mob text-white"></i></span>
+                               <span id="closeIcon"><i class="fa clickable closeIcon fa-times fa-2x humb-mob text-white"></i></span>
                                <ul class="nav-list mt-3">
                                  <li id="position-relative" >
                                    <span class="active-navlink"></span>
                                  </li>
                                  <li class="nav-item " >
-                                   <a href="#list" class="ps-3 text-white navLink active">List</a>
+                                   <a href="#list" class="text-white navLink active">List</a>
                                  </li>
                                  <li class="nav-item" >
-                                   <a href="#form" class="ps-3 text-white navLink">Add Book</a>
+                                   <a href="#form" class="text-white navLink">Add Book</a>
                                  </li>
                                  <li class="nav-item" >
-                                   <a href="#contact" class="ps-3 text-white navLink">Contact</a>
+                                   <a href="#contact" class="text-white navLink">Contact</a>
                                  </li>
                                </ul>
                              </nav>`;
@@ -229,8 +242,10 @@ document.addEventListener('submit', (e) => {
     addedSuccess();
   }
 });
+
 const layout = new Layout();
 layout.update();
+
 document.querySelector('.lsOutput').addEventListener('click', (e) => {
   const isButton = e.target.nodeName === 'BUTTON';
   if (!isButton) {
@@ -238,4 +253,23 @@ document.querySelector('.lsOutput').addEventListener('click', (e) => {
   }
   UI.deleteBook(e.target.parentElement.id);
   Store.removeBook(e.target.parentElement.id);
+});
+
+// Imlplement responsive menu
+
+const menu = document.querySelector('.header');
+
+document.getElementById('humburger').onclick = () => {
+  menu.classList.add('change-menu');
+  // alert('hello')
+};
+
+document.getElementById('closeIcon').addEventListener('click', () => {
+  menu.classList.remove('change-menu');
+});
+
+window.addEventListener('mouseup', (e) => {
+  if (e.target !== document.getElementById('closeIcon') && e.target !== document.getElementById('humburger')) {
+    menu.classList.remove('change-menu');
+  }
 });
