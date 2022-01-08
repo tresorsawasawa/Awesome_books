@@ -96,7 +96,9 @@ class Layout {
                                <div class="page-title">
                                  <a href="#list" class="page-title text-white active">Awesome Book</a>
                                </div>
-                               <ul class="nav-list d-flex mt-3">
+                               <span id="humburger"><i class="fa humburger fa-bars fa-2x humb-mob text-white d-none"></i></span>
+                               <span id="humburger"><i class="fa humburger fa-times fa-2x humb-mob text-white d-none"></i></span>
+                               <ul class="nav-list mt-3">
                                  <li id="position-relative" >
                                    <span class="active-navlink"></span>
                                  </li>
