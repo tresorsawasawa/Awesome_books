@@ -30,7 +30,10 @@ a { text-decoration: none !important; }
 .closeIcon,
 .content { display: none; }
 
-.form-group { margin: 30px auto; }
+.form-group {
+  margin: 30px auto;
+  width: 400px;
+}
 
 .content.active { display: block; }
 
@@ -65,6 +68,11 @@ a { text-decoration: none !important; }
   width: 97%;
   margin: 3px auto;
   display: flex;
+}
+
+.nav-list li a.active {
+  border-bottom: 3px solid #fff;
+  padding-top: 10px !important;
 }
 
 .list-output .book:first-child { margin-top: 10px; }
@@ -119,10 +127,10 @@ input::placeholder { font-size: 16px; }
 @media screen and (max-width: 632px) {
   .change-menu {
     background: #212529;
-    height: calc(100vh - 60px);
+    height: calc(100vh - 41px);
     width: 100%;
     opacity: 0.92;
-    box-shadow: 0 45px 45px rgba(37, 47, 137, 0.09);
+    box-shadow: 0 45px 45px rgba(198, 199, 212, 0.09);
     animation: animMenu 1s ease;
     transition: all 1s ease;
   }
@@ -137,6 +145,8 @@ input::placeholder { font-size: 16px; }
   .list-title h3 { padding: 0 !important; }
 
   #clock-parag { padding-top: 0 !important; }
+
+  .nav-list li a.active { border: none; }
 
   #by,
   .change-menu .page-title,
@@ -154,6 +164,8 @@ input::placeholder { font-size: 16px; }
   }
 
   .nav-list li a { font-size: 20px; }
+
+  .nav-list li:nth-child(2) a { margin-left: 0 !important; }
 
   .change-menu .nav-list li:hover a {
     border: 3px solid #fff;
@@ -188,6 +200,8 @@ input::placeholder { font-size: 16px; }
     font-size: 16px;
     line-height: 20px;
   }
+
+  .form-group { max-width: 250px; }
 
   #removeBtn {
     font-size: 15px;
