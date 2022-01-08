@@ -54,12 +54,14 @@ class UI {
 
   static addBookToList(book) {
     const listOutput = document.querySelector('.lsOutput');
-    listOutput.innerHTML += `<div class="book rounded" id="${book.id}">
-                                <span class="p-2 fw-bolder item1 text-capitalize">"${book.title}"</span>
-                                <span class="p-2">by</span>
-                                <span class="p-2 item3 text-capitalize">${book.author}</span>
-                                <button class="position-absolute h5 py-1 px-4 removeBtn clickable rounded end-0 bottom-0" >Delete</button>
-                              </div>
+    listOutput.innerHTML += `<div class="book rounded">
+                               <div class="book-infos py-2" id="${book.id}">   
+                                 <span class="px-2 fw-bolder item1 blck text-capitalize">"${book.title}"</span>
+                                 <span id="by" class="px-2">by</span>
+                                 <span id="spanAuthor" class="px-2 item3 blck text-capitalize"><span id="by1">by:</span> ${book.author}</span>
+                                 <button id="removeBtn" class="position-absolute h5 py-1 px-4 removeBtn clickable rounded end-0 bottom-0" >Delete</button>
+                               </div>
+                             </div>
                             `;
   }
 
@@ -112,14 +114,11 @@ class Layout {
                                <span id="humburger"><i class="fa clickable humburger fa-bars fa-2x humb-mob text-white"></i></span>
                                <span id="closeIcon"><i class="fa clickable closeIcon fa-times fa-2x humb-mob text-white"></i></span>
                                <ul class="nav-list mt-3">
-                                 <li id="position-relative" >
-                                   <span class="active-navlink"></span>
-                                 </li>
                                  <li class="nav-item " >
                                    <a href="#list" class="text-white navLink active">List</a>
                                  </li>
                                  <li class="nav-item" >
-                                   <a href="#form" class="text-white navLink">Add Book</a>
+                                   <a href="#form" class="px-3 text-white navLink">Add Book</a>
                                  </li>
                                  <li class="nav-item" >
                                    <a href="#contact" class="text-white navLink">Contact</a>
@@ -130,7 +129,7 @@ class Layout {
     const today = date.DateTime.local();
     this.time = document.createElement('div');
     this.time.classList.add('clock', 'mt-5');
-    this.time.innerHTML = `<p class='pt-4 text-end me-2'>
+    this.time.innerHTML = `<p id="clock-parag" class="pt-4 text-end me-2">
                              ${today.toFormat('FFF')}
                            </p>
                            `;
@@ -162,10 +161,10 @@ class Layout {
                                   </div>
                                   <p id="addMsg" class="text-center text-success"></p>
                                   <div class="form-group w-50">
-                                    <input type="text" id ="title" class="form-control input-text w-100 shadow-none" placeholder="Enter Book Title">
+                                    <input type="text" id ="title" class="form-control input-text w-100 shadow-none" placeholder="Enter Book Title" required>
                                   </div>
                                   <div class="form-group w-50">
-                                    <input type="text" id ="author" class="form-control input-text w-100 shadow-none" placeholder="Enter Book Author">
+                                    <input type="text" id ="author" class="form-control input-text w-100 shadow-none" placeholder="Enter Book Author" required>
                                   </div>
                                   <div class="delete-btn text-center">
                                     <input type="submit" class="btn btn-success px-5 clickable mt-4" value="Add Book" id="insertBtn">
@@ -220,27 +219,27 @@ function addedSuccess() {
   document.getElementById('addMsg').innerHTML = 'Book added successfully!!!';
   setTimeout(() => {
     document.getElementById('addMsg').style = 'display:none';
-  }, 3000);
+  }, 2000);
 }
 
 document.addEventListener('submit', (e) => {
   e.preventDefault();
-  if (e.target.title.value === '' || e.target.author.value === '') {
-    alert('Input field cannot be empty');
-  } else {
-    const author = e.target.author.value.trim();
-    const title = e.target.title.value.trim();
-    const newBook = new Book(title, author);
-    Store.addBook(newBook);
-    UI.addBookToList(newBook);
-    e.target.reset();
-    document.querySelectorAll('.content').forEach((item) => {
-      item.classList.remove('active');
-    });
-    const content = document.querySelector('#form');
-    content.classList.add('active');
-    addedSuccess();
-  }
+  // if (e.target.title.value === '' || e.target.author.value === '') {
+  //   alert('Input field cannot be empty');
+  // // } else {
+  const author = e.target.author.value.trim();
+  const title = e.target.title.value.trim();
+  const newBook = new Book(title, author);
+  Store.addBook(newBook);
+  UI.addBookToList(newBook);
+  e.target.reset();
+  document.querySelectorAll('.content').forEach((item) => {
+    item.classList.remove('active');
+  });
+  const content = document.querySelector('#form');
+  content.classList.add('active');
+  addedSuccess();
+  // }
 });
 
 const layout = new Layout();
