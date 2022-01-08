@@ -118,7 +118,7 @@ class Layout {
                                    <a href="#list" class="text-white navLink active">List</a>
                                  </li>
                                  <li class="nav-item" >
-                                   <a href="#form" class="px-3 text-white navLink">Add Book</a>
+                                   <a href="#form" class="mx-5 text-white navLink">Add Book</a>
                                  </li>
                                  <li class="nav-item" >
                                    <a href="#contact" class="text-white navLink">Contact</a>
@@ -160,10 +160,10 @@ class Layout {
                                     <h3 class="fw-bold fs-4 w-100 pt-2 pb-2 flex-center-column">Add New Book</h3>
                                   </div>
                                   <p id="addMsg" class="text-center text-success"></p>
-                                  <div class="form-group w-50">
+                                  <div class="form-group">
                                     <input type="text" id ="title" class="form-control input-text w-100 shadow-none" placeholder="Enter Book Title" required>
                                   </div>
-                                  <div class="form-group w-50">
+                                  <div class="form-group">
                                     <input type="text" id ="author" class="form-control input-text w-100 shadow-none" placeholder="Enter Book Author" required>
                                   </div>
                                   <div class="delete-btn text-center">
@@ -176,7 +176,7 @@ class Layout {
       'text-center',
       'content-box',
       'content',
-      'pt-5',
+      'pt-2',
     );
     this.contactInfos.setAttribute('id', 'contact');
     this.contactInfos.classList.add('contact');
