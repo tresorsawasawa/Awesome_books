@@ -2,19 +2,6 @@
 
 const date = window.luxon;
 
-// const humburger = document.getElementById('humburger');
-// const closeMemu = document.querySelector('#closeIcon');
-
-// closeMemu.addEventListener('click', () => {
-//   menu.classList.remove('change-menu');
-// });
-
-// window.addEventListener('mouseup', (e) => {
-//   if (e.target !== humburger && e.target !== closeMemu) {
-//     menu.classList.remove('change-menu');
-//   }
-// });
-
 class Book {
   constructor(title, author) {
     this.id = new Date().valueOf();
