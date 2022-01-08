@@ -4,7 +4,9 @@
 
 ## Description
 
-![App view](./images/App-Screnshot.png)
+Mobile version | Desktop
+---------------------- | ------------------------------
+![Mobile_screenshot](./images/Mobile-screenshot.png) | ![DEsktop_screenshot](./images/Desktop-screenshot.png)
 
 > "Awesome books" is a simple website that displays a list of books and allows you to add and remove books from that list.  
 
