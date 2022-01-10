@@ -1,35 +1,26 @@
 {
-  "name": "Solidarity-Capstone-project",
+  "name": "Awesome_books",
   "version": "1.0.0",
-  "description": "",
+  "description": "![](https://img.shields.io/badge/Microverse-blueviolet)",
   "main": "index.js",
+  "dependencies": {
+    "full-icu": "^1.4.0",
+    "luxon": "^2.3.0",
+    "three": "^0.136.0"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tresorsawasawa/Solidarity-Capstone-project.git"
+    "url": "git+https://github.com/tresorsawasawa/Awesome_books.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tresorsawasawa/Solidarity-Capstone-project/issues"
+    "url": "https://github.com/tresorsawasawa/Awesome_books/issues"
   },
-  "homepage": "https://github.com/tresorsawasawa/Solidarity-Capstone-project#readme",
-  "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.25.3",
-    "hint": "^6.1.9",
-    "stylelint": "^13.13.1",
-    "stylelint-config-standard": "^21.0.0",
-    "stylelint-csstree-validator": "^1.9.0",
-    "stylelint-scss": "^3.21.0"
-  },
-  "dependencies": {
-    "full-icu": "^1.4.0",
-    "luxon": "^2.3.0"
-  }
+  "homepage": "https://github.com/tresorsawasawa/Awesome_books#readme"
 }
