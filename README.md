@@ -59,12 +59,12 @@ See the live by clicking [Live Demo Link](https://tresorsawasawa.github.io/Aweso
 
 - GitHub: [@tresorsawasawa](https://github.com/tresorsawasawa)
 - Twitter: [@tresorsawasawa](https://twitter.com/TresorSawasawa)
-- LinkedIn: [Trésor Sawasawa](https://www.linkedin.com/in/ayandokunelijah/)
+- LinkedIn: [Trésor Sawasawa](https://www.linkedin.com/in/tr%C3%A9sor-sawasawa-43745320b/)
 
 👤 **Author 2**
 
 - GitHub: [@ElijahTobs](https://github.com/ElijahTobs)
-- Twitter: [@tresorsawasawa](https://twitter.com/ElijahTobs)
+- Twitter: [@ElijahTobs](https://twitter.com/ElijahTobs)
 - LinkedIn: [Elijah Ayandokun](https://www.linkedin.com/in/elijahayandokun/)
 ## 🤝 Contributing
 
