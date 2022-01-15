@@ -8,12 +8,12 @@ Mobile version | Desktop
 ---------------------- | ------------------------------
 ![Mobile_screenshot](./images/Mobile-screenshot.png) | ![DEsktop_screenshot](./images/Desktop-screenshot.png)
 
-> "Awesome books" is a simple website that displays a list of books and allows you to add and remove books from that list.  
+>  "Awesome books" is a simple website that displays a list of books and allows you to add and remove books from that list.
 
-> Here are some Tasks In side:
+> Here are some features of the page:
 
- - Add a book on your collection.
- - Remove a book on your collection.
+ - Add a book to your collection.
+ - Remove a book from your collection.
  - Store your data history in the browser's memory.
 
 ## Built With
